@@ -23,8 +23,8 @@ app.use("/api/v1/video", videorouter);
 app.use("/api/v1/public", express.static(path.join(__dirname, "public")));
 
 //bodyetic
-const frontendBuild = "../build";
 const adminBuild = "../build-admin";
+const frontendBuild = "../build";
 
 app.use(express.static(path.join(__dirname, frontendBuild)));
 app.use("/login", express.static(path.join(__dirname, frontendBuild)));
