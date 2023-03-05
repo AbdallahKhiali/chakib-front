@@ -116,7 +116,7 @@ const login = async (req, res) => {
 const updateuser = (req, res) => {
   var id = req.params.id;
   userModel
-    .updateOne({ id }, req.body)
+    .findByIdAndUpdate(id, req.body)
     .then(() => {
       res.status(201).json({
         message: "user updated successfully!",
