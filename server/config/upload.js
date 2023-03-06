@@ -7,18 +7,18 @@ const storage = multer.diskStorage({
             fs.mkdirSync("public");
         }
 
-        if (!fs.existsSync("public/images")) {
-            fs.mkdirSync("public/images");
+        if (!fs.existsSync("../public/images")) {
+            fs.mkdirSync("../public/images");
         }
 
-        cb(null, "public/images");
+        cb(null, "../public/images");
     },
     filename: function (req, file, cb) {
-        cb(null,file.originalname);
+        cb(null, file.originalname);
     }
 });
 const fileFilter = (req, file, cb) => {
-    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/webp' || file.mimetype === 'image/avif') {
         cb(null, true);
     } else {
         cb(null, false);
