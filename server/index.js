@@ -20,7 +20,7 @@ app.use("/api/v1/users", userrouter);
 app.use("/api/v1/product", productrouter);
 app.use("/api/v1/video", videorouter);
 
-app.use("/api/v1/public", express.static(path.join(__dirname, "public")));
+app.use("/api/v1/public", express.static(path.join(__dirname, "../public")));
 
 //bodyetic
 const adminBuild = "../build-admin";
